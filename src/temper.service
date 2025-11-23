@@ -1,0 +1,13 @@
+[Unit]
+Description=temper: read temperatures from temper devices
+DefaultDependencies=no
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/temper-daemon --service
+User=root
+
+[Install]
+WantedBy=multi-user.target
+Alias=temper.service
