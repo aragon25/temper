@@ -6,8 +6,6 @@ function undo_changes(){
   udevadm trigger >/dev/null 2>&1
   systemctl stop temper.service >/dev/null 2>&1
   systemctl disable temper.service >/dev/null 2>&1
-  rm -f "/lib/systemd/system/temper.service" >/dev/null 2>&1
-  systemctl daemon-reload >/dev/null 2>&1
   rm -rf "/run/temper_temp" >/dev/null 2>&1
   exit 1
 }
